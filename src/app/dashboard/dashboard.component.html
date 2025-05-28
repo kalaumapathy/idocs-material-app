@@ -1,0 +1,94 @@
+<h2 class="page-title">Dashboard</h2>
+<p class="page-description">Welcome back! This is your central hub for managing documents, accessing quick actions, and getting AI-powered suggestions. From here, you can easily see your recent activity and jump into key tasks.</p>
+
+<div class="dashboard-grid">
+  <mat-card class="dashboard-card recent-activity-card">
+    <mat-card-header>
+      <mat-card-title>Recent Activity</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <mat-icon matListItemIcon>description</mat-icon>
+          <div matListItemTitle>Report Q4.pdf - Yesterday</div>
+          <button mat-icon-button matListItemMeta (click)="navigateTo('/document-viewer')">
+            <mat-icon>open_in_new</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon matListItemIcon>image</mat-icon>
+          <div matListItemTitle>Marketing_Banner.jpg - 2 days ago</div>
+          <button mat-icon-button matListItemMeta (click)="navigateTo('/document-viewer')">
+            <mat-icon>open_in_new</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon matListItemIcon>article</mat-icon>
+          <div matListItemTitle>Meeting Notes.docx - Last week</div>
+          <button mat-icon-button matListItemMeta (click)="navigateTo('/document-viewer')">
+            <mat-icon>open_in_new</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+      <button mat-button color="primary" class="view-all-button">View All Recent Activity</button>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="dashboard-card quick-actions-card">
+    <mat-card-header>
+      <mat-card-title>Quick Actions</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="quick-action-buttons">
+        <button mat-raised-button color="accent">
+          <mat-icon>cloud_upload</mat-icon>
+          Upload New Document
+        </button>
+        <button mat-raised-button color="primary" (click)="navigateTo('/settings', 'cloudIntegrationSettings')">
+          <mat-icon>cloud</mat-icon>
+          Connect Cloud Storage
+        </button>
+        <button mat-raised-button color="warn" (click)="navigateTo('/chat')">
+          <mat-icon>chat</mat-icon>
+          AI Chat Assistant
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="dashboard-card suggested-card">
+    <mat-card-header>
+      <mat-card-title>Suggested for You (AI Powered)</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="suggested-items-grid">
+        <mat-card class="suggested-item-card">
+          <mat-card-content>
+            <div class="suggested-item-content">
+              <mat-icon>description</mat-icon>
+              <div class="text-content">
+                <div class="item-title">Contract_Review.pdf</div>
+                <div class="item-subtitle">Needs classification</div>
+              </div>
+            </div>
+            <button mat-button color="primary">Review Now</button>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="suggested-item-card">
+          <mat-card-content>
+            <div class="suggested-item-content">
+              <mat-icon>folder</mat-icon>
+              <div class="text-content">
+                <div class="item-title">Folder: Unsorted Scans</div>
+                <div class="item-subtitle">Contains 15 unclassified items</div>
+              </div>
+            </div>
+            <button mat-button color="primary">Organize</button>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

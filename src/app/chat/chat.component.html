@@ -1,0 +1,28 @@
+<h2 class="page-title">AI Chat Assistant</h2>
+<p class="page-description">Interact with your documents using our intelligent AI assistant. Ask questions, request summaries, or get insights from your entire knowledge base. The AI will cite sources for its answers.</p>
+
+<mat-card class="chat-card">
+  <mat-card-content class="chat-content">
+    <div #chatMessagesContainer class="chat-messages flex-grow-scrollable">
+      <div *ngFor="let message of messages" class="message-bubble" [class.user-message]="message.isUser" [class.bot-message]="!message.isUser">
+        <div class="message-text">{{ message.text }}</div>
+        <button *ngIf="message.source" mat-button color="primary" class="source-button" (click)="previewSource(message.source)">
+          Preview Source: {{ message.source }}
+        </button>
+      </div>
+    </div>
+
+    <div class="message-input-area">
+      <mat-form-field appearance="outline" class="message-input-field">
+        <mat-label>Type your question...</mat-label>
+        <input matInput [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" placeholder="Ask me anything about your documents">
+        <button mat-icon-button matSuffix matTooltip="Voice Input">
+          <mat-icon>mic</mat-icon>
+        </button>
+      </mat-form-field>
+      <button mat-flat-button color="primary" (click)="sendMessage()" [disabled]="!newMessage.trim()">
+        Send
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

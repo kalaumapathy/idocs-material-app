@@ -1,0 +1,154 @@
+@use '@angular/material' as mat;
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+
+  .page-title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin: 0;
+    color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+  }
+
+  .header-actions button {
+    color: mat.get-color-from-palette(mat.$blue-grey-palette, 600);
+  }
+}
+
+.page-description {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  color: mat.get-color-from-palette(mat.$grey-palette, 700);
+}
+
+.file-filters {
+  margin-bottom: 24px;
+  mat-button-toggle-group {
+    background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 50);
+    border-radius: 4px;
+    box-shadow: mat.elevation(1);
+
+    .mat-button-toggle {
+      padding: 0 16px;
+      height: 40px;
+      font-size: 0.9rem;
+      color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+      
+      &:hover {
+        background-color: rgba(mat.get-color-from-palette(mat.$blue-grey-palette, 100), 0.7);
+      }
+    }
+
+    .mat-button-toggle-checked {
+      background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 600);
+      color: white;
+      &:hover {
+        background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+      }
+    }
+  }
+}
+
+.files-card {
+  border-radius: 8px;
+  box-shadow: mat.elevation(2);
+  margin-bottom: 24px;
+
+  mat-card-header {
+    padding: 16px 24px;
+    .mat-mdc-card-title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+    }
+  }
+
+  mat-card-content {
+    padding: 0 24px 24px 24px; // Adjust padding to match Material guidelines
+  }
+}
+
+.folders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  padding: 16px 0;
+
+  .folder-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: mat.elevation(1);
+    background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 50);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    &:hover {
+      background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 100);
+      box-shadow: mat.elevation(4);
+    }
+
+    mat-icon {
+      font-size: 48px;
+      width: 48px;
+      height: 48px;
+      color: mat.get-color-from-palette(mat.$blue-grey-palette, 600);
+      margin-bottom: 8px;
+    }
+
+    span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+      text-align: center;
+    }
+  }
+}
+
+.file-list-card {
+  .file-list {
+    .mat-mdc-list-item {
+      padding: 12px 0;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .mat-icon {
+        color: mat.get-color-from-palette(mat.$grey-palette, 600);
+        margin-right: 16px;
+      }
+      .mat-mdc-list-item-title {
+        color: mat.get-color-from-palette(mat.$grey-palette, 800);
+        font-weight: 500;
+      }
+      .file-meta {
+        font-size: 0.8rem;
+        color: mat.get-color-from-palette(mat.$grey-palette, 500);
+        margin-left: 8px;
+      }
+      .mat-mdc-list-item-meta button {
+        color: mat.get-color-from-palette(mat.$grey-palette, 600);
+      }
+    }
+  }
+}
+
+.fab-upload {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 20; // Ensure it's above other content
+  // Adjust for mobile bottom nav if needed
+  @media (max-width: 767px) {
+    bottom: 80px; // Above the bottom nav
+  }
+}

@@ -1,0 +1,98 @@
+@use '@angular/material' as mat;
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+  background-color: #f0f2f5; // Match global body background
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 8px !important; // Override default mat-card-title margin if needed
+  color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+}
+
+.login-illustration-container {
+  margin: 16px 0;
+  .login-illustration {
+    max-width: 150px; // Adjust as needed
+    height: auto;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+}
+
+.login-subtitle {
+  margin-bottom: 24px !important;
+  font-size: 1rem;
+  color: mat.get-color-from-palette(mat.$grey-palette, 600);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px 0 !important; // Ensure consistent button height
+  text-transform: none !important; // Keep button text as is
+  font-size: 0.95rem;
+}
+
+.oauth-button {
+  // Add specific styles for Google/Microsoft buttons if needed
+  // e.g., border colors, icons
+}
+
+.google-button {
+  // border-color: #DB4437; // Example
+  // color: #DB4437;
+}
+
+.microsoft-button {
+  // border-color: #0078D4; // Example
+  // color: #0078D4;
+}
+
+.email-button {
+  margin-top: 8px; // Add some space before the main login button
+}
+
+.login-actions {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0 8px 0 !important; // Adjust padding
+  .signup-link {
+    font-size: 0.9rem;
+    color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.terms-policy {
+  font-size: 0.75rem;
+  color: mat.get-color-from-palette(mat.$grey-palette, 500);
+  margin-top: 16px;
+  a {
+    color: mat.get-color-from-palette(mat.$blue-grey-palette, 600);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

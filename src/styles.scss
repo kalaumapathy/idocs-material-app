@@ -1,1 +1,79 @@
-/* You can add global styles to this file, and also import other style files */
+// Use @use for Angular Material theming. This is the modern and recommended approach.
+// This MUST be at the very top of your SCSS file.
+@use '@angular/material' as mat;
+
+// Include the common styles for Angular Material.
+// This mixin must be called once in your global styles.
+@include mat.core();
+
+// Define the palettes for your theme.
+// Use the $mat- prefix for built-in palettes.
+$idocs-app-primary: mat.define-palette(mat.$blue-grey-palette, 600, 400, 800);
+$idocs-app-accent: mat.define-palette(mat.$amber-palette, A400, A100, A700);
+$idocs-app-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object.
+$idocs-app-theme: mat.define-light-theme((
+  color: (
+    primary: $idocs-app-primary,
+    accent: $idocs-app-accent,
+    warn: $idocs-app-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+// Apply the theme to all Angular Material components.
+@include mat.all-component-themes($idocs-app-theme);
+
+/* Global Styles */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f0f2f5; /* A light, warm neutral background */
+}
+
+/* Placeholder comments for context */
+/* Chosen Palette: Primary: Blue-Grey, Accent: Amber (Warm, professional feel) */
+/* Application Structure Plan: Single Page Application using Angular Router, with UI built using Angular Material components and custom SCSS. Aiming for a clean, modern Material Design aesthetic. */
+/* Visualization & Content Choices: Angular Material components for forms, buttons, cards, navigation, etc. Chart.js for data visualization in the Admin/Settings area. Custom SCSS for layout and specific styling needs. No Tailwind CSS, No SVG/Mermaid used. */
+/* CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. Tailwind CSS completely removed. */
+
+
+/* Helper class for full height flex column (useful for chat-like views) */
+.full-height-flex-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.flex-grow-scrollable {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+/* Chart.js container styling */
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Max width for chart readability */
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px; /* Base height */
+    max-height: 400px; /* Max height */
+}
+@media (min-width: 768px) { /* md breakpoint */
+    .chart-container {
+        height: 350px;
+    }
+}
+
+/* Custom scrollbar for chat (example) */
+.chat-messages::-webkit-scrollbar { width: 6px; }
+.chat-messages::-webkit-scrollbar-track { background: #eeeeee; border-radius: 10px; }
+.chat-messages::-webkit-scrollbar-thumb { background: #bdbdbd; border-radius: 10px; }
+.chat-messages::-webkit-scrollbar-thumb:hover { background: #8d8d8d; }

@@ -1,0 +1,149 @@
+@use '@angular/material' as mat;
+
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+}
+
+.page-description {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  color: mat.get-color-from-palette(mat.$grey-palette, 700);
+}
+
+.search-input-section {
+  margin-bottom: 24px;
+
+  .full-width-input {
+    width: 100%;
+    .mat-mdc-form-field-flex {
+      align-items: center; // Vertically align suffix icons
+    }
+    .mat-mdc-button.mat-mdc-icon-button {
+      color: mat.get-color-from-palette(mat.$grey-palette, 600);
+    }
+  }
+}
+
+.active-filters-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  .filter-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: mat.get-color-from-palette(mat.$grey-palette, 700);
+    margin-right: 8px;
+  }
+
+  mat-chip-listbox {
+    .mat-mdc-chip-row {
+      background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 100);
+      color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+      font-size: 0.85rem;
+      padding: 4px 8px;
+      height: auto; // Allow chip to grow with content if needed
+      .mat-icon {
+        font-size: 16px;
+        height: 16px;
+        width: 16px;
+        color: mat.get-color-from-palette(mat.$blue-grey-palette, 600);
+      }
+    }
+  }
+
+  button.mat-mdc-button {
+    font-size: 0.85rem;
+    .mat-icon {
+      margin-right: 4px;
+    }
+  }
+}
+
+.search-results-card {
+  border-radius: 8px;
+  box-shadow: mat.elevation(2);
+  padding: 24px;
+
+  mat-card-header {
+    margin-bottom: 16px;
+    .mat-mdc-card-title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+    }
+  }
+
+  mat-card-content {
+    padding: 0;
+  }
+}
+
+.search-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .search-result-item {
+    box-shadow: none;
+    border: 1px solid mat.get-color-from-palette(mat.$grey-palette, 200);
+    background-color: mat.get-color-from-palette(mat.$grey-palette, 50);
+    padding: 16px;
+    border-radius: 8px;
+
+    mat-card-content {
+      padding: 0 !important;
+
+      .item-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        .mat-icon {
+          font-size: 24px;
+          color: mat.get-color-from-palette(mat.$blue-grey-palette, 600);
+          margin-right: 8px;
+        }
+        .item-title {
+          font-weight: 500;
+          color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+          font-size: 1rem;
+        }
+      }
+
+      .item-snippet {
+        font-size: 0.9rem;
+        color: mat.get-color-from-palette(mat.$grey-palette, 700);
+        margin-bottom: 12px;
+        mark {
+          background-color: mat.get-color-from-palette(mat.$amber-palette, 100);
+          padding: 0 2px;
+          border-radius: 2px;
+        }
+      }
+
+      .item-meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 0.8rem;
+        color: mat.get-color-from-palette(mat.$grey-palette, 600);
+
+        mat-chip-listbox {
+          .mat-mdc-chip-row {
+            background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 50);
+            color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

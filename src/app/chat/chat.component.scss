@@ -1,0 +1,111 @@
+@use '@angular/material' as mat;
+
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+}
+
+.page-description {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  color: mat.get-color-from-palette(mat.$grey-palette, 700);
+}
+
+.chat-card {
+  height: calc(100vh - 200px); // Adjust height to fit viewport minus header/padding
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: mat.elevation(2);
+
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 16px !important; // Override default card content padding
+  }
+}
+
+.chat-messages {
+  padding-right: 8px; // Space for custom scrollbar
+  padding-bottom: 16px; // Space before input area
+}
+
+.message-bubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  position: relative;
+  word-wrap: break-word; // Ensure long words wrap
+
+  .message-text {
+    color: inherit;
+  }
+
+  .source-button {
+    font-size: 0.75rem;
+    margin-top: 8px;
+    padding: 4px 8px;
+    height: auto;
+    line-height: 1;
+    border-radius: 16px;
+    background-color: rgba(mat.get-color-from-palette(mat.$blue-grey-palette, 50), 0.7);
+    color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+    &:hover {
+      background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 100);
+    }
+  }
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: mat.get-color-from-palette(mat.$amber-palette, 500);
+  color: white;
+  border-bottom-right-radius: 4px; // Sharpen corner for user
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 100);
+  color: mat.get-color-from-palette(mat.$blue-grey-palette, 900);
+  border-bottom-left-radius: 4px; // Sharpen corner for bot
+}
+
+.message-input-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 16px; // Space from messages above
+  border-top: 1px solid rgba(0,0,0,0.05); // Separator
+
+  .message-input-field {
+    flex-grow: 1;
+    .mat-mdc-text-field-wrapper {
+      background-color: mat.get-color-from-palette(mat.$grey-palette, 50);
+      border-radius: 28px; // Pill shape
+      padding: 0 16px;
+      .mat-mdc-form-field-flex {
+        padding: 8px 0;
+      }
+      .mat-mdc-form-field-infix {
+        padding: 0;
+      }
+      .mat-mdc-button.mat-mdc-icon-button {
+        color: mat.get-color-from-palette(mat.$grey-palette, 600);
+      }
+    }
+  }
+
+  button.mat-flat-button {
+    height: 48px; // Match input field height
+    min-width: 48px; // Make it square for icon button
+    border-radius: 24px; // Pill shape
+    padding: 0 16px;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,59 @@
+<div class="page-header">
+  <button mat-icon-button (click)="goBackToFiles()" matTooltip="Back to Files">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <h2 class="page-title">Share: Project Proposal.pdf</h2>
+</div>
+<p class="page-description">Securely share your documents with flexible options. Control access with links, passcodes, direct invites, and granular permission settings.</p>
+
+<mat-card class="share-card">
+  <mat-card-content>
+    <div class="document-preview">
+      <mat-icon>description</mat-icon>
+      <div class="document-title">Project Proposal.pdf</div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="share-options-section">
+      <h3>Share Options</h3>
+
+      <mat-checkbox [(ngModel)]="shareLink" color="primary">Share via Secure Link</mat-checkbox>
+      <mat-form-field appearance="outline" class="full-width-input" *ngIf="shareLink">
+        <mat-label>Shareable Link</mat-label>
+        <input matInput [value]="shareLink" readonly>
+        <button mat-icon-button matSuffix (click)="copyLink()" matTooltip="Copy Link">
+          <mat-icon>content_copy</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-checkbox [(ngModel)]="requirePasscode" color="primary">Require Passcode</mat-checkbox>
+      <mat-form-field appearance="outline" class="full-width-input" *ngIf="requirePasscode">
+        <mat-label>Enter Passcode</mat-label>
+        <input matInput type="password" [(ngModel)]="passcode">
+      </mat-form-field>
+
+      <mat-checkbox color="primary">Direct Invite (Email)</mat-checkbox>
+      <mat-form-field appearance="outline" class="full-width-input">
+        <mat-label>Add Recipient Email</mat-label>
+        <input matInput type="email" [(ngModel)]="recipientEmail" placeholder="recipient@example.com">
+        <button mat-button matSuffix color="primary" (click)="addRecipient()" [disabled]="!recipientEmail.trim()">Add</button>
+      </mat-form-field>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="permissions-section">
+      <h3>Permissions:</h3>
+      <mat-radio-group aria-label="Select permissions" [(ngModel)]="selectedPermission">
+        <mat-radio-button value="view">View Only</mat-radio-button>
+        <mat-radio-button value="comment">View & Comment</mat-radio-button>
+        <mat-radio-button value="edit">View, Comment & Edit</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <button mat-raised-button color="accent" class="share-button" (click)="shareDocument()">
+      Share Document
+    </button>
+  </mat-card-content>
+</mat-card>

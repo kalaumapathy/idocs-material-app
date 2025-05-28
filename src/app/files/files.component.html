@@ -1,0 +1,88 @@
+<div class="page-header">
+  <h2 class="page-title">All Documents</h2>
+  <div class="header-actions">
+    <button mat-icon-button matTooltip="Filter">
+      <mat-icon>filter_list</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Sort">
+      <mat-icon>sort</mat-icon>
+    </button>
+  </div>
+</div>
+<p class="page-description">Browse, manage, and organize all your documents from integrated sources. Use filters and sorting to find what you need, and perform actions like viewing, editing, or sharing files.</p>
+
+<div class="file-filters">
+  <mat-button-toggle-group name="fileTypeFilter" aria-label="File Type Filter" [value]="activeFilter" (change)="filterFiles($event.value)">
+    <mat-button-toggle value="all">All</mat-button-toggle>
+    <mat-button-toggle value="docs">Documents</mat-button-toggle>
+    <mat-button-toggle value="images">Images</mat-button-toggle>
+    <mat-button-toggle value="videos">Videos</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+<mat-card class="files-card">
+  <mat-card-header>
+    <mat-card-title>Folders</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="folders-grid">
+      <mat-card class="folder-item">
+        <mat-icon>folder</mat-icon>
+        <span>My Documents</span>
+      </mat-card>
+      <mat-card class="folder-item">
+        <mat-icon>folder_shared</mat-icon>
+        <span>Shared with Me</span>
+      </mat-card>
+      <mat-card class="folder-item">
+        <mat-icon>help_outline</mat-icon>
+        <span>Unclassified</span>
+      </mat-card>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="files-card file-list-card">
+  <mat-card-header>
+    <mat-card-title>Files</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list class="file-list">
+      <mat-list-item *ngFor="let file of filteredFiles">
+        <mat-icon matListItemIcon>{{ file.icon }}</mat-icon>
+        <div matListItemTitle>{{ file.name }}</div>
+        <div matListItemLine class="file-meta">{{ file.size }}, {{ file.date }}</div>
+        <div matListItemMeta>
+          <button mat-icon-button [matMenuTriggerFor]="fileActionsMenu" aria-label="File actions">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #fileActionsMenu="matMenu">
+            <button mat-menu-item (click)="navigateTo('/document-viewer')">
+              <mat-icon>visibility</mat-icon>
+              <span>View</span>
+            </button>
+            <button mat-menu-item (click)="navigateTo('/secure-share')">
+              <mat-icon>share</mat-icon>
+              <span>Share</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>edit</mat-icon>
+              <span>Edit</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>delete</mat-icon>
+              <span>Delete</span>
+            </button>
+          </mat-menu>
+        </div>
+      </mat-list-item>
+      <mat-list-item *ngIf="filteredFiles.length === 0">
+        <div matListItemTitle>No files found for this filter.</div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<button mat-fab color="accent" class="fab-upload" aria-label="Upload new document">
+  <mat-icon>add</mat-icon>
+</button>

@@ -1,0 +1,89 @@
+<h2 class="page-title">Search Documents</h2>
+<p class="page-description">Utilize powerful semantic search to find content across all your integrated providers. Type your query below and apply filters to narrow down your results.</p>
+
+<div class="search-input-section">
+  <mat-form-field appearance="outline" class="full-width-input">
+    <mat-label>Search all documents...</mat-label>
+    <input matInput type="search" [(ngModel)]="searchQuery" placeholder="e.g., 'project proposal'">
+    <button mat-icon-button matSuffix matTooltip="Voice search">
+      <mat-icon>mic</mat-icon>
+    </button>
+    <button mat-icon-button matSuffix matTooltip="Image search">
+      <mat-icon>camera_alt</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div class="active-filters-section">
+  <span class="filter-label">Active Filters:</span>
+  <mat-chip-listbox aria-label="Active filters">
+    <mat-chip-row *ngFor="let filter of activeFilters" (removed)="removeFilter(filter)">
+      {{ filter }}
+      <button matChipRemove [attr.aria-label]="'remove ' + filter">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip-row>
+  </mat-chip-listbox>
+  <button mat-button color="primary" (click)="addFilter()">
+    <mat-icon>add</mat-icon>Add Filter
+  </button>
+</div>
+
+<mat-card class="search-results-card">
+  <mat-card-header>
+    <mat-card-title>Results (3 found)</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="search-results-list">
+      <mat-card class="search-result-item">
+        <mat-card-content>
+          <div class="item-header">
+            <mat-icon>picture_as_pdf</mat-icon>
+            <span class="item-title">Project Alpha Proposal.pdf</span>
+          </div>
+          <p class="item-snippet">"...this document outlines the <mark>project proposal</mark> for Project Alpha, including scope, timeline, and budget..."</p>
+          <div class="item-meta">
+            <span>Source: Google Drive</span>
+            <mat-chip-listbox>
+              <mat-chip>#Finance</mat-chip>
+              <mat-chip>#Q3</mat-chip>
+            </mat-chip-listbox>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="search-result-item">
+        <mat-card-content>
+          <div class="item-header">
+            <mat-icon>article</mat-icon>
+            <span class="item-title">Meeting Notes - Q2.docx</span>
+          </div>
+          <p class="item-snippet">"...during the Q2 review, the team discussed the new <mark>project proposal</mark> from the marketing department..."</p>
+          <div class="item-meta">
+            <span>Source: Dropbox</span>
+            <mat-chip-listbox>
+              <mat-chip>#Meeting</mat-chip>
+              <mat-chip>#Internal</mat-chip>
+            </mat-chip-listbox>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="search-result-item">
+        <mat-card-content>
+          <div class="item-header">
+            <mat-icon>image</mat-icon>
+            <span class="item-title">Flowchart_Project_Initiation.png</span>
+          </div>
+          <p class="item-snippet">OCR: "...shows the steps of the <mark>project proposal</mark> process from ideation to approval..."</p>
+          <div class="item-meta">
+            <span>Source: Local Storage</span>
+            <mat-chip-listbox>
+              <mat-chip>#Diagram</mat-chip>
+            </mat-chip-listbox>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-card-content>
+</mat-card>

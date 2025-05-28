@@ -1,0 +1,30 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-header class="justify-center">
+      <mat-card-title class="login-title">iDocs</mat-card-title>
+    </mat-card-header>
+    <div class="login-illustration-container">
+        <img src="https://placehold.co/200x100/E3F2FD/1E88E5?text=iDocs+Logo" alt="iDocs Illustration" class="login-illustration">
+    </div>
+    <mat-card-subtitle class="login-subtitle">
+      Your unified, intelligent document platform.
+    </mat-card-subtitle>
+    <mat-card-content>
+      <form class="login-form">
+        <button mat-stroked-button color="primary" class="login-button oauth-button google-button">
+          Sign In with Google
+        </button>
+        <button mat-stroked-button color="primary" class="login-button oauth-button microsoft-button">
+          Sign In with Microsoft
+        </button>
+        <button mat-raised-button color="primary" (click)="login()" class="login-button email-button">
+          Sign In with Email/Password
+        </button>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="login-actions">
+      <a routerLink="/signup" class="signup-link">Don't have an account? Sign Up</a>
+    </mat-card-actions>
+    <p class="terms-policy">By signing in, you agree to our <a href="#">Terms</a> & <a href="#">Privacy Policy</a>.</p>
+  </mat-card>
+</div>

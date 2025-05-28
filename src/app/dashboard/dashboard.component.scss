@@ -1,0 +1,148 @@
+@use '@angular/material' as mat;
+
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+}
+
+.page-description {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  color: mat.get-color-from-palette(mat.$grey-palette, 700);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+
+  @media (min-width: 768px) { // Medium screens and up
+    grid-template-columns: 2fr 1fr; // Recent activity takes 2/3, quick actions 1/3
+  }
+
+  @media (min-width: 1024px) { // Large screens and up
+    grid-template-columns: repeat(3, 1fr); // Three columns for suggested
+  }
+}
+
+.dashboard-card {
+  border-radius: 8px;
+  box-shadow: mat.elevation(2);
+  padding: 24px;
+
+  mat-card-header {
+    margin-bottom: 16px;
+    .mat-mdc-card-title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+    }
+  }
+
+  mat-card-content {
+    padding: 0; // Remove default padding as we handle it inside
+  }
+}
+
+.recent-activity-card {
+  @media (min-width: 768px) {
+    grid-column: span 2; // Span 2 columns on medium screens
+  }
+  .mat-mdc-list-item {
+    padding: 12px 0;
+    font-size: 0.95rem;
+    .mat-icon {
+      color: mat.get-color-from-palette(mat.$grey-palette, 600);
+    }
+    .mat-mdc-list-item-title {
+      color: mat.get-color-from-palette(mat.$grey-palette, 800);
+    }
+    .mat-mdc-list-item-meta button {
+      color: mat.get-color-from-palette(mat.$blue-grey-palette, 600);
+    }
+  }
+  mat-divider {
+    border-color: rgba(0,0,0,0.08);
+  }
+  .view-all-button {
+    margin-top: 16px;
+    font-size: 0.85rem;
+  }
+}
+
+.quick-actions-card {
+  .quick-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    button {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 0.9rem;
+      mat-icon {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.suggested-card {
+  grid-column: span 1; // Default to 1 column on small screens
+  @media (min-width: 1024px) {
+    grid-column: span 3; // Span all 3 columns on large screens
+  }
+
+  .suggested-items-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (min-width: 600px) { // Small tablets and up
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+  }
+
+  .suggested-item-card {
+    box-shadow: none; // No extra shadow for inner cards
+    border: 1px solid mat.get-color-from-palette(mat.$grey-palette, 200);
+    background-color: mat.get-color-from-palette(mat.$grey-palette, 50);
+    padding: 16px;
+    border-radius: 8px;
+
+    mat-card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 0 !important; // Remove default padding
+    }
+
+    .suggested-item-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+      mat-icon {
+        font-size: 32px;
+        color: mat.get-color-from-palette(mat.$blue-grey-palette, 500);
+      }
+      .text-content {
+        .item-title {
+          font-weight: 500;
+          color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+        }
+        .item-subtitle {
+          font-size: 0.85rem;
+          color: mat.get-color-from-palette(mat.$grey-palette, 600);
+        }
+      }
+    }
+    button {
+      font-size: 0.8rem;
+      padding: 0 8px;
+      height: 32px;
+    }
+  }
+}

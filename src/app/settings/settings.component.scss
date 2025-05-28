@@ -1,0 +1,132 @@
+@use '@angular/material' as mat;
+
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+}
+
+.page-description {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  color: mat.get-color-from-palette(mat.$grey-palette, 700);
+}
+
+.settings-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.settings-card {
+  border-radius: 8px;
+  box-shadow: mat.elevation(2);
+  padding: 24px;
+
+  mat-card-header {
+    margin-bottom: 16px;
+    .mat-mdc-card-title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+    }
+  }
+
+  mat-card-content {
+    padding: 0; // Remove default padding as we handle it inside
+  }
+
+  .section-description {
+    font-size: 0.9rem;
+    color: mat.get-color-from-palette(mat.$grey-palette, 600);
+    margin-bottom: 24px;
+  }
+}
+
+.integration-list {
+  margin-bottom: 24px;
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+    margin-bottom: 12px;
+  }
+  mat-list {
+    .mat-mdc-list-item {
+      padding: 12px 0;
+      font-size: 0.95rem;
+      .mat-icon {
+        color: mat.get-color-from-palette(mat.$grey-palette, 600);
+        margin-right: 16px;
+      }
+      .mat-mdc-list-item-title {
+        color: mat.get-color-from-palette(mat.$grey-palette, 800);
+        font-weight: 500;
+      }
+      button {
+        font-size: 0.75rem;
+        padding: 0 8px;
+        height: 32px;
+      }
+      .status-text {
+        font-size: 0.85rem;
+        color: mat.get-color-from-palette(mat.$grey-palette, 500);
+      }
+    }
+    mat-divider {
+      border-color: rgba(0,0,0,0.08);
+    }
+  }
+}
+
+.admin-links-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-link {
+    display: block;
+    padding: 16px;
+    background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 50);
+    border: 1px solid mat.get-color-from-palette(mat.$blue-grey-palette, 200);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    &:hover {
+      background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 100);
+      box-shadow: mat.elevation(4);
+    }
+  }
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+  margin-bottom: 12px;
+}
+
+.chart-container {
+  background-color: mat.get-color-from-palette(mat.$grey-palette, 50);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid mat.get-color-from-palette(mat.$grey-palette, 200);
+  /* Chart.js specific container styles from global styles */
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  max-height: 400px;
+}

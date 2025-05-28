@@ -1,0 +1,72 @@
+<h2 class="page-title">Settings</h2>
+<p class="page-description">Manage your iDocs application settings, including cloud integrations, AI model preferences, and administrative configurations. This area allows you to customize how iDocs works for you or your organization.</p>
+
+<div class="settings-sections">
+    <mat-card id="cloudIntegrationSettings" class="settings-card">
+        <mat-card-header>
+            <mat-card-title>Cloud Integrations</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="section-description">Connect and manage your accounts from various cloud storage providers to unify your document access.</p>
+            <div class="integration-list">
+                <h3>Connected Accounts:</h3>
+                <mat-list>
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>cloud</mat-icon>
+                        <div matListItemTitle>Google Drive</div>
+                        <button mat-stroked-button color="warn" matListItemMeta>Disconnect</button>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>cloud</mat-icon>
+                        <div matListItemTitle>Dropbox</div>
+                        <button mat-stroked-button color="warn" matListItemMeta>Disconnect</button>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <div class="integration-list">
+                <h3>Available Providers:</h3>
+                <mat-list>
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>cloud_queue</mat-icon>
+                        <div matListItemTitle>Amazon WorkDocs</div>
+                        <button mat-raised-button color="primary" matListItemMeta>Connect</button>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>cloud_queue</mat-icon>
+                        <div matListItemTitle>Apple iCloud Drive</div>
+                        <button mat-raised-button color="primary" matListItemMeta>Connect</button>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>devices</mat-icon>
+                        <div matListItemTitle>Local Device Storage</div>
+                        <div matListItemMeta class="status-text">Always Available</div>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card id="adminDashboardSettings" class="settings-card">
+        <mat-card-header>
+            <mat-card-title>Admin Dashboard</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="section-description">Access administrative tools to configure custom categories, manage LLM models, set policies, and monitor application usage and performance. The chart below shows a sample of usage statistics.</p>
+            <div class="admin-links-grid">
+                <a mat-button class="admin-link">Manage Categories</a>
+                <a mat-button class="admin-link">LLM Settings</a>
+                <a mat-button class="admin-link">Deduplication Policy</a>
+                <a mat-button class="admin-link">Sharing Policy</a>
+                <a mat-button class="admin-link">User Activity Logs</a>
+                <a mat-button class="admin-link">Manage Users</a>
+            </div>
+            <h3>Usage Statistics (Sample)</h3>
+            <div class="chart-container">
+                <canvas #usageChartCanvas></canvas>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

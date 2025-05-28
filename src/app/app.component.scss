@@ -1,0 +1,102 @@
+// No @use '@angular/material' as mat; needed here if using direct hex colors.
+// Component-specific styles. The actual Material theming is applied globally via styles.scss.
+
+.app-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.app-sidenav {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(0,0,0,.12);
+  background-color: #37474F; /* Blue-Grey 800 */
+
+  .sidenav-header {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    .app-title {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin: 0;
+      letter-spacing: 1px;
+      color: #ECEFF1; /* Blue-Grey 50 */
+    }
+  }
+
+  mat-nav-list { // This will be styled by the global Material theme
+    flex-grow: 1;
+    padding-top: 8px;
+    // Specific overrides if needed, but prefer global theme application
+    a.mat-mdc-list-item { // More specific selector for Material 15+
+      .mat-icon {
+        margin-right: 16px;
+        color: #CFD8DC; // Blue-Grey 100
+      }
+      // text color for mat-list-item will come from the theme
+      &:hover {
+        background-color: rgba(255,255,255,0.08); // Light hover for dark background
+      }
+    }
+  }
+
+  .sidenav-footer {
+    padding: 16px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    .logout-button {
+      width: 100%;
+    }
+  }
+}
+
+.app-content {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.app-toolbar { // This will be styled by the global Material theme (color="primary")
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.page-content {
+  padding: 24px;
+  flex-grow: 1;
+  background-color: #f0f2f5; // Main page background
+}
+
+.bottom-nav-mobile { // This will be styled by the global Material theme (color="primary")
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-around;
+
+  a.mat-mdc-icon-button {
+    color: white; // Icons on primary toolbar
+    flex-grow: 1;
+    border-radius: 0;
+    padding: 12px 0;
+    height: 56px;
+
+    .mat-icon {
+      font-size: 24px;
+    }
+     &:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .app-content {
+    padding-bottom: 56px;
+  }
+}
