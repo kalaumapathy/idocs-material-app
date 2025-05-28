@@ -19,7 +19,7 @@
   font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 8px !important; // Override default mat-card-title margin if needed
-  color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+  color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 700);
 }
 
 .login-illustration-container {
@@ -35,7 +35,7 @@
 .login-subtitle {
   margin-bottom: 24px !important;
   font-size: 1rem;
-  color: mat.get-color-from-palette(mat.$grey-palette, 600);
+  color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 600);
 }
 
 .login-form {
@@ -76,7 +76,7 @@
   padding: 16px 0 8px 0 !important; // Adjust padding
   .signup-link {
     font-size: 0.9rem;
-    color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+    color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 700);
     text-decoration: none;
     &:hover {
       text-decoration: underline;
@@ -86,10 +86,10 @@
 
 .terms-policy {
   font-size: 0.75rem;
-  color: mat.get-color-from-palette(mat.$grey-palette, 500);
+  color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 500);
   margin-top: 16px;
   a {
-    color: mat.get-color-from-palette(mat.$blue-grey-palette, 600);
+    color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 600);
     text-decoration: none;
     &:hover {
       text-decoration: underline;

@@ -10,24 +10,24 @@
     font-size: 2.2rem;
     font-weight: 500;
     margin: 0;
-    color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+    color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 800);
   }
 
   .header-actions button {
-    color: mat.get-color-from-palette(mat.$blue-grey-palette, 600);
+    color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 600);
   }
 }
 
 .page-description {
   font-size: 1rem;
   margin-bottom: 24px;
-  color: mat.get-color-from-palette(mat.$grey-palette, 700);
+  color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 700);
 }
 
 .file-filters {
   margin-bottom: 24px;
   mat-button-toggle-group {
-    background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 50);
+    background-color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 50);
     border-radius: 4px;
     box-shadow: mat.elevation(1);
 
@@ -35,18 +35,18 @@
       padding: 0 16px;
       height: 40px;
       font-size: 0.9rem;
-      color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+      color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 700);
       
       &:hover {
-        background-color: rgba(mat.get-color-from-palette(mat.$blue-grey-palette, 100), 0.7);
+        background-color: rgba(mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 100), 0.7);
       }
     }
 
     .mat-button-toggle-checked {
-      background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 600);
+      background-color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 600);
       color: white;
       &:hover {
-        background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+        background-color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 700);
       }
     }
   }
@@ -62,7 +62,7 @@
     .mat-mdc-card-title {
       font-size: 1.4rem;
       font-weight: 500;
-      color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+      color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 700);
     }
   }
 
@@ -85,12 +85,12 @@
     padding: 16px;
     border-radius: 8px;
     box-shadow: mat.elevation(1);
-    background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 50);
+    background-color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 50);
     cursor: pointer;
     transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
     &:hover {
-      background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 100);
+      background-color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 100);
       box-shadow: mat.elevation(4);
     }
 
@@ -98,14 +98,14 @@
       font-size: 48px;
       width: 48px;
       height: 48px;
-      color: mat.get-color-from-palette(mat.$blue-grey-palette, 600);
+      color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 600);
       margin-bottom: 8px;
     }
 
     span {
       font-size: 0.9rem;
       font-weight: 500;
-      color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+      color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 800);
       text-align: center;
     }
   }
@@ -123,20 +123,20 @@
       }
 
       .mat-icon {
-        color: mat.get-color-from-palette(mat.$grey-palette, 600);
+        color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 600);
         margin-right: 16px;
       }
       .mat-mdc-list-item-title {
-        color: mat.get-color-from-palette(mat.$grey-palette, 800);
+        color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 800);
         font-weight: 500;
       }
       .file-meta {
         font-size: 0.8rem;
-        color: mat.get-color-from-palette(mat.$grey-palette, 500);
+        color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 500);
         margin-left: 8px;
       }
       .mat-mdc-list-item-meta button {
-        color: mat.get-color-from-palette(mat.$grey-palette, 600);
+        color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 600);
       }
     }
   }

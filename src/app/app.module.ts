@@ -36,7 +36,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'files', component: FilesComponent },
@@ -51,7 +51,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    // AppComponent is now standalone, so it's NOT declared here
+    AppComponent, //is now standalone, so it's NOT declared here
     LoginComponent,
     DashboardComponent,
     FilesComponent,
@@ -86,6 +86,7 @@ const routes: Routes = [
     MatChipsModule,
     MatDividerModule
   ],
+  bootstrap:[AppComponent],
   providers: [],
   // bootstrap is removed as AppComponent is standalone and bootstrapped in main.ts
   // exports: [CommonModule, RouterModule] // Optional: if other modules need these

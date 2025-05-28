@@ -9,19 +9,19 @@
     font-size: 2.2rem;
     font-weight: 500;
     margin: 0;
-    color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+    color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 800);
     margin-left: 16px; // Space from back button
   }
 
   button.mat-mdc-icon-button {
-    color: mat.get-color-from-palette(mat.$blue-grey-palette, 600);
+    color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 600);
   }
 }
 
 .page-description {
   font-size: 1rem;
   margin-bottom: 24px;
-  color: mat.get-color-from-palette(mat.$grey-palette, 700);
+  color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 700);
 }
 
 .document-viewer-card {
@@ -56,13 +56,13 @@
 
     .document-content-area {
       min-height: 400px;
-      background-color: mat.get-color-from-palette(mat.$grey-palette, 200);
-      border: 1px solid mat.get-color-from-palette(mat.$grey-palette, 300);
+      background-color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 200);
+      border: 1px solid mat.m2-get-color-from-palette(mat.$m2-grey-palette, 300);
       border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: mat.get-color-from-palette(mat.$grey-palette, 600);
+      color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 600);
       font-style: italic;
       margin-bottom: 24px;
       padding: 16px; // Add some padding inside
@@ -88,14 +88,14 @@
       h3 {
         font-size: 1.1rem;
         font-weight: 500;
-        color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+        color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 700);
         margin-bottom: 16px;
       }
 
       .suggestion-item {
         box-shadow: none;
-        border: 1px solid mat.get-color-from-palette(mat.$blue-grey-palette, 100);
-        background-color: mat.get-color-from-palette(mat.$blue-grey-palette, 50);
+        border: 1px solid mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 100);
+        background-color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 50);
         margin-bottom: 12px;
         border-radius: 8px;
 
@@ -104,7 +104,7 @@
           p {
             margin-bottom: 12px;
             font-size: 0.9rem;
-            color: mat.get-color-from-palette(mat.$grey-palette, 800);
+            color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 800);
           }
           .suggestion-actions {
             display: flex;

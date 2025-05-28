@@ -19,17 +19,17 @@ import { takeUntil, filter } from 'rxjs/operators';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  standalone: true, // <--- THIS COMPONENT IS NOW STANDALONE
-  imports: [ // <--- ALL TEMPLATE DEPENDENCIES MUST BE IMPORTED HERE
-    CommonModule,
-    RouterModule, // For router-outlet and routerLink
-    MatSidenavModule,
-    MatToolbarModule,
-    MatListModule,
-    MatIconModule,
-    MatButtonModule,
-    MatTooltipModule
-  ]
+  standalone: false, // <--- THIS COMPONENT IS NOW STANDALONE
+  // imports: [ // <--- ALL TEMPLATE DEPENDENCIES MUST BE IMPORTED HERE
+  //   CommonModule,
+  //   RouterModule, // For router-outlet and routerLink
+  //   MatSidenavModule,
+  //   MatToolbarModule,
+  //   MatListModule,
+  //   MatIconModule,
+  //   MatButtonModule,
+  //   MatTooltipModule
+  // ]
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
   @ViewChild('sidenav') sidenav!: MatSidenav;

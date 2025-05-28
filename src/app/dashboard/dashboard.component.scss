@@ -4,13 +4,13 @@
   font-size: 2.2rem;
   font-weight: 500;
   margin-bottom: 16px;
-  color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+  color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 800);
 }
 
 .page-description {
   font-size: 1rem;
   margin-bottom: 24px;
-  color: mat.get-color-from-palette(mat.$grey-palette, 700);
+  color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 700);
 }
 
 .dashboard-grid {
@@ -37,7 +37,7 @@
     .mat-mdc-card-title {
       font-size: 1.4rem;
       font-weight: 500;
-      color: mat.get-color-from-palette(mat.$blue-grey-palette, 700);
+      color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 700);
     }
   }
 
@@ -54,13 +54,13 @@
     padding: 12px 0;
     font-size: 0.95rem;
     .mat-icon {
-      color: mat.get-color-from-palette(mat.$grey-palette, 600);
+      color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 600);
     }
     .mat-mdc-list-item-title {
-      color: mat.get-color-from-palette(mat.$grey-palette, 800);
+      color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 800);
     }
     .mat-mdc-list-item-meta button {
-      color: mat.get-color-from-palette(mat.$blue-grey-palette, 600);
+      color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 600);
     }
   }
   mat-divider {
@@ -106,8 +106,8 @@
 
   .suggested-item-card {
     box-shadow: none; // No extra shadow for inner cards
-    border: 1px solid mat.get-color-from-palette(mat.$grey-palette, 200);
-    background-color: mat.get-color-from-palette(mat.$grey-palette, 50);
+    border: 1px solid mat.m2-get-color-from-palette(mat.$m2-grey-palette, 200);
+    background-color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 50);
     padding: 16px;
     border-radius: 8px;
 
@@ -126,16 +126,16 @@
       margin-bottom: 8px;
       mat-icon {
         font-size: 32px;
-        color: mat.get-color-from-palette(mat.$blue-grey-palette, 500);
+        color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 500);
       }
       .text-content {
         .item-title {
           font-weight: 500;
-          color: mat.get-color-from-palette(mat.$blue-grey-palette, 800);
+          color: mat.m2-get-color-from-palette(mat.$m2-blue-grey-palette, 800);
         }
         .item-subtitle {
           font-size: 0.85rem;
-          color: mat.get-color-from-palette(mat.$grey-palette, 600);
+          color: mat.m2-get-color-from-palette(mat.$m2-grey-palette, 600);
         }
       }
     }

@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
+import { MatButton } from '@angular/material/button';
 
 interface ChatMessage {
   text: string;
